@@ -1,0 +1,224 @@
+:root {
+  --bg-color: #000000;
+  --main-color: #9f59ad;
+}
+
+.footer {
+  font-weight: 000;
+  z-index: 10;
+  background-color: var(--bg-color);
+  color: #fff;
+  padding: 30px 20px;
+  position: relative;
+}
+
+.footer::before {
+  content: "";
+  display: block;
+  height: 4px;
+  width: 100%;
+  background: linear-gradient(to right, #a659ad, #632d83, #a659ad 59ad);
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.leftBlock,
+.centerBlock,
+.rightBlock {
+  position: relative;
+  z-index: 0;
+  border-radius: 12px;
+}
+
+.leftBlock::after,
+.centerBlock::after,
+.rightBlock::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: var(--main-color);
+  filter: blur(40px);
+  opacity: 0.3;
+  z-index: -1;
+  border-radius: 12px;
+  pointer-events: none;
+}
+
+.topSection {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.leftBlock {
+  margin-left: 5%;
+  max-width: 300px;
+}
+
+.logo {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.logo span {
+  color: var(--main-color);
+}
+
+.description {
+  margin-bottom: 15px;
+  color: #ccc;
+}
+
+.socials {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 10px;
+}
+
+.socials a {
+  color: #fff;
+  font-size: 1.6rem;
+  transition: color 0.3s ease;
+}
+
+.socials a:hover {
+  color: var(--main-color);
+}
+
+.centerBlock {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+}
+
+.navTitle {
+  color: var(--main-color);
+  font-size: 1.4rem;
+  margin-bottom: 10px;
+}
+
+.navColumns {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+}
+
+.navList {
+  list-style: none;
+  padding: 0;
+}
+
+.navList li {
+  margin-bottom: 8px;
+}
+
+.navList a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.navList a:hover {
+  text-decoration: underline;
+}
+
+.rightBlock {
+  margin-right: 5%;
+  text-align: center;
+}
+
+.paymentTitle {
+  color: var(--main-color);
+  font-size: 1.4rem;
+  margin-bottom: 10px;
+}
+
+.paymentImage {
+  max-width: 350px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  border-radius: 8px;
+}
+
+.paymentIcons svg {
+  font-size: 2rem;
+  color: #fff;
+  transition: color 0.3s ease;
+}
+
+.paymentIcons svg:hover {
+  color: var(--main-color);
+}
+
+.bottomLine {
+  text-align: center;
+  font-size: 0.9rem;
+  color: #888;
+  margin-top: 15px;
+}
+
+.bottomLine a {
+  color: #888;
+  text-decoration: none;
+  margin-left: 10px;
+}
+
+.bottomLine a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  .topSection {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .leftBlock,
+  .centerBlock,
+  .rightBlock {
+    position: static; 
+    transform: none;
+    margin: 15px 0;
+    max-width: 100%;
+    text-align: center;
+  }
+
+  .leftBlock {
+    margin-left: 0;
+  }
+
+  .rightBlock {
+    margin-right: 0;
+  }
+
+  .navColumns {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .navList {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+  }
+
+  .navList li {
+    margin-bottom: 0;
+  }
+
+  .leftBlock::after,
+  .centerBlock::after,
+  .rightBlock::after {
+    display: none;
+  }
+}
